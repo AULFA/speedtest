@@ -43,4 +43,5 @@ foreach ($rate in $tcpRates) {
 
 Stop-Transcript
 
+Write-Output "Tests completed"
 Read-Host "Press ENTER to exit"
