@@ -10,7 +10,10 @@ Network capability testing
 1. Unzip `speedtest-***.zip` to your desktop or other writable medium
 2. Double-click `run.bat`
 3. Wait for the tests to complete
-4. Email the contents of the `logs` directory to LFA
+4. Email the contents of the `logs` directory to LFA. Please let us
+   know where you were when you executed the tests. Knowing the country,
+   locale, whether you were on 3G or on hotel WiFi, etc, is all useful
+   data.
 
 ## Troubleshooting
 
