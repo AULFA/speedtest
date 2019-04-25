@@ -19,3 +19,9 @@ Network capability testing
 You need [Powershell](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-windows-powershell)
 installed if running these tests on Windows. See the link for details.
 
+#### One or more tests failed
+
+It may be possible that you're on a network that has such poor connectivity
+that it can't complete one or more tests. Don't despair; send us the log files
+anyway! Failures are still useful data.
+
