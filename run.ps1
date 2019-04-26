@@ -31,7 +31,6 @@ function Run-UDP([Int] $Bandwidth) {
     Write-Output "Test failed."
     Write-Output "See: https://github.com/AULFA/speedtest#one-or-more-tests-failed"
   }
-  Write-Output ""
 }
 
 $tcpRates = @(1000, 2000, 10000, 20000, 100000, 200000, 1000000, 2000000, 10000000, 20000000, 100000000, 200000000)
