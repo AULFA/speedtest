@@ -1,4 +1,4 @@
-﻿$targetDomain = "not.a.domain.com"
+﻿$targetDomain = "speedtest.lfa.one"
 
 $timestamp = $(get-date -f yyyy-MM-dd_HHmmss)
 $logFile = "logs/${timestamp}.json"
