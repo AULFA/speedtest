@@ -9,4 +9,6 @@ if errorlevel 1 (
  exit
 )
 
-powershell.exe -noprofile -executionpolicy remotesigned -file .\run.ps1
+powershell.exe -noprofile -executionpolicy Unrestricted -file .\lib\run.ps1
+timeout 15
+exit
