@@ -30,7 +30,7 @@ $timeExpected = $udpRates.Count * 0.5
 Write-Output "Tests will be completed in approximately ${timeExpected} minutes"
 Write-Output ""
 
-foreach ($rate in $tcpRates) {
+foreach ($rate in $udpRates) {
   Run-UDP $rate
 }
 
