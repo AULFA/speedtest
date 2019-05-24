@@ -13,16 +13,6 @@ Write-Output "Log file is ${logFile}"
 Write-Output "Transcript is ${scriptLogFile}"
 Write-Output ""
 
-function Run-TCP([Int] $Bandwidth) {
-  $BandwidthMB = $Bandwidth * 0.000001
-  Write-Output "Running $BandwidthMB MBits/sec TCP for 30 seconds"
-  ./lib/iperf3.exe -c "${targetDomain}" --logfile "${logFile}" --format M --bandwidth $Bandwidth --time 30 --json --verbose
-  if ($LASTEXITCODE -ne 0) {
-    Write-Output "Test failed."
-    Write-Output "See: https://github.com/AULFA/speedtest#one-or-more-tests-failed"
-  }
-}
-
 function Run-UDP([Int] $Bandwidth) {
   $BandwidthMB = $Bandwidth * 0.000001
   Write-Output "Running $BandwidthMB MBits/sec UDP for 30 seconds"
@@ -33,19 +23,14 @@ function Run-UDP([Int] $Bandwidth) {
   }
 }
 
-$tcpRates = @(1000, 2000, 10000, 20000, 100000, 200000, 1000000, 2000000, 10000000, 20000000, 100000000, 200000000)
 $udpRates = @(1000, 2000, 10000, 20000, 100000, 200000, 1000000, 2000000, 10000000, 20000000, 100000000, 200000000)
 
-$timeExpected = ($tcpRates.Count + $udpRates.Count) * 0.5
+$timeExpected = $udpRates.Count * 0.5
 
 Write-Output "Tests will be completed in approximately ${timeExpected} minutes"
 Write-Output ""
 
-foreach ($rate in $tcpRates) {
-  Run-TCP $rate
-}
-
-foreach ($rate in $tcpRates) {
+foreach ($rate in $udpRates) {
   Run-UDP $rate
 }
 
