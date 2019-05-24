@@ -16,7 +16,7 @@ Write-Output ""
 function Run-UDP([Int] $Bandwidth) {
   $BandwidthMB = $Bandwidth * 0.000001
   Write-Output "Running $BandwidthMB MBits/sec UDP for 30 seconds"
-  ./lib/iperf3.exe -c "${targetDomain}" --logfile "${logFile}" --format M --bandwidth $Bandwidth --time 30 --json --verbose --udp
+  ./lib/iperf3.exe -c "${targetDomain}" --logfile "${logFile}" --format M --bandwidth $Bandwidth -R --time 30 --json --verbose --udp
   if ($LASTEXITCODE -ne 0) {
     Write-Output "Test failed."
     Write-Output "See: https://github.com/AULFA/speedtest#one-or-more-tests-failed"
